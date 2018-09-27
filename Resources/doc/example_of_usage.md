@@ -20,7 +20,7 @@ namespace Acme\DemoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 // importing @Encrypted annotation
-use Ambta\DoctrineEncryptBundle\Configuration\Encrypted;
+use Jurv\DoctrineEncryptBundle\Configuration\Encrypted;
 
 /**
  * @ORM\Entity
@@ -111,7 +111,7 @@ use Acme\DemoBundle\Entity\UserV;
 class DemoController extends Controller
 {
     /**
-     * @Route("/show-user/{id}", name="_ambta_decrypt_test", requirements={"id" = "\d+"})
+     * @Route("/show-user/{id}", name="_jurv_decrypt_test", requirements={"id" = "\d+"})
      * @Template
      */
     public function getUserAction(UserV $user) {}
@@ -149,4 +149,4 @@ So our information is encoded and all okay.
 
 ###Requirements
 
-You need `DoctrineFixturesBundle` and `php-mcrypt` extension for this example
+You need `DoctrineFixturesBundle` extension for this example
