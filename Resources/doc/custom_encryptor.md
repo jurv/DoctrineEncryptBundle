@@ -2,8 +2,6 @@
 
 We can imagine that you want to use your own encryption class, it is simpel.
 
-### Warning: make sure you add the `<ENC>` after your encrypted string.
-
 1. Create an new class and implement Jurv\DoctrineEncryptBundle\Encryptors\EncryptorInterface.
 2. Create a constructor with the parameter secret key `__construct($secretKey)`
 3. Create a function called encrypt with parameter data `encrypt($data)`
@@ -13,7 +11,7 @@ We can imagine that you want to use your own encryption class, it is simpel.
 
 ## Example
 
-### MyRijndael192Encryptor.php
+### Example.php
 
 ``` php
 <?php
@@ -59,7 +57,7 @@ class ChangeSecretKeyAESCompiler implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         $container->setParameter(
-            'vmelnik_doctrine_encrypt.secret_key',
+            'jurv_doctrine_encrypt.secret_key',
             file_get_contents('../keys/aes256_secret.key') // You can choose whatever you want, you can also get the path from a parameter from config.yml
         );
     }
@@ -93,4 +91,4 @@ class FooAcmeBundle extends Bundle
 
 And that's it ! Now you rely on a file instead of a configuration value
 
-#### [Back to the index](https://github.com/jurv/DoctrineEncryptBundle/blob/master/Resources/doc/index.md)
+[Back to the index](https://github.com/jurv/DoctrineEncryptBundle/blob/master/Resources/doc/index.md)

@@ -1,4 +1,4 @@
-#Installation
+# Installation
 
 1. Download JurvDoctrineEncryptBundle using composer
 2. Enable the database encryption bundle
@@ -17,7 +17,7 @@ JurvDoctrineEncryptBundle should be installed using [Composer](http://getcompose
 ``` js
 {
     "require": {
-        "jurv/doctrine-encrypt-bundle": "2.4.*"
+        "jurv/doctrine-encrypt-bundle": "0.1.*"
     }
 }
 ```
@@ -49,4 +49,4 @@ public function registerBundles()
 All configuration value's are optional.
 On the following page you can find de configuration information.
 
-#### [Configuration](https://github.com/jurv/DoctrineEncryptBundle/blob/master/Resources/doc/configuration.md)
+[Configuration](https://github.com/jurv/DoctrineEncryptBundle/blob/master/Resources/doc/configuration.md)

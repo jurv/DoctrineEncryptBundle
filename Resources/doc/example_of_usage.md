@@ -1,4 +1,4 @@
-#Example Of Usage
+# Example Of Usage
 
 Lets imagine that we are storing some private data in our database and we don't want 
 to somebody can see it even if he will get raw database on his hands in some dirty way. 
@@ -12,7 +12,7 @@ these things will be happen automatically.
 For example, we have some user entity with two fields which we want to encode in database.
 We must import annotation `@Encrypted` first and then mark fields with it.
 
-###Doctrine Entity
+### Doctrine Entity
 
 ```php
 namespace Acme\DemoBundle\Entity;
@@ -67,7 +67,7 @@ class UserV {
 }
 ```
 
-###Fixtures
+### Fixtures
 
 ```php
 
@@ -93,7 +93,7 @@ class LoadUserData implements FixtureInterface
 }
 ```
 
-###Controller
+### Controller
 
 ```php
 
@@ -118,7 +118,7 @@ class DemoController extends Controller
 }
 ```
 
-###Template
+### Template
 
 ```twig
 <div>Common info: {{ user.lastName ~  ' ' ~ user.firstName }}</div>
@@ -147,6 +147,6 @@ credit_card_number  | 1Y+Yzq6/dDXvtnYHhTyadWfIm6xhGLxuKL2oSuxuzL4=
 
 So our information is encoded and all okay.
 
-###Requirements
+### Requirements
 
 You need `DoctrineFixturesBundle` extension for this example
