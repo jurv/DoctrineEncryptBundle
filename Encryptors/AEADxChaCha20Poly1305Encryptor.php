@@ -36,7 +36,7 @@ class AEADxChaCha20Poly1305Encryptor implements EncryptorInterface
             $this->secretKey
         );
 
-        return $nonce.$encrypted;
+        return base64_encode($nonce.$encrypted);
     }
 
     /**
@@ -45,8 +45,10 @@ class AEADxChaCha20Poly1305Encryptor implements EncryptorInterface
      */
     public function decrypt($data): string
     {
-        $nonce = mb_substr($data, 0, 24, '8bit');
-        $ciphertext = mb_substr($data, 24, null, '8bit');
+        $decodedData = base64_decode($data);
+
+        $nonce = mb_substr($decodedData, 0, 24, '8bit');
+        $ciphertext = mb_substr($decodedData, 24, null, '8bit');
 
         $plaintext = sodium_crypto_aead_xchacha20poly1305_ietf_decrypt(
             $ciphertext,
